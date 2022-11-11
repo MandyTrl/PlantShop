@@ -13,7 +13,7 @@ function Cart() {
    }
 
    return (
-      <div>
+      <div className= "cart">
          <ul>
             <li> {plantsAdd[0].name} , {plantsAdd[0].price} </li>
             <li> {plantsAdd[1].name} , {plantsAdd[1].price} </li>
