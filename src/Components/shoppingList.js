@@ -1,10 +1,16 @@
-import { plantList } from '../datas/plantList'
+import { plantList } from '../datas/plantList';
+import CareScale from './careScale';
 
 function ShoppingList() {
-	const categories = plantList.reduce(
-		( acc, plant ) =>
-			acc.includes( plant.category ) ? acc : acc.concat( plant.category ),
-		[]
+	const categories = plantList.reduce( //applique la méthode reduce au tableau "plantList"
+		( acc, plant ) => //qui applique une fonction "acc" qui sert d'accumulateur et qui traite chaque valeur 
+		//du tableau "plantList" nommée "plant"
+			acc.includes( plant.category ) ? acc : acc.concat( plant.category ), //est-ce que la catégorie de la
+		//plante ("pant.category") est dans le tableau "acc.includes" ?
+		//si "true" : le tab "acc" est retourné tel quel
+		//si "false" : "acc.concat( plant.category )" la catégorie de la plante est ajoutée à l'accumulateur
+		//grace à la méthode .concat() afin d'éviter les doublons
+			[]
 	)
 
 	return (
@@ -22,6 +28,7 @@ function ShoppingList() {
 					</li>
 				))}
 			</ul>
+			<CareScale scaleValue= {plant.light} />
 		</div>
 	)
 }
