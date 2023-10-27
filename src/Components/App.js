@@ -1,14 +1,20 @@
-import '../ressources/App.css';
-import Banner from './banner';
-import ShoppingList from './shoppingList';
+import '../ressources/App.css'
+import Banner from './Banner'
+import Cart from './Card'
+import Footer from './Footer'
+import ShoppingList from './ShoppingList'
 
 function App() {
-  return (
-    <div className="App">
-      <Banner />
-      <ShoppingList />
-    </div>
-  );
+	return (
+		<div className="App">
+			<Banner />
+			<div className="main">
+				<Cart />
+				<ShoppingList />
+			</div>
+			<Footer />
+		</div>
+	)
 }
 
-export default App;
+export default App
