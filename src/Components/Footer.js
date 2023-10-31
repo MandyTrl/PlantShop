@@ -25,6 +25,7 @@ function Footer() {
 				</p>
 			</div>
 			<form>
+				<h3>Newsletter</h3>
 				<p className="nl">
 					Abonnez-vous à la newsletter et découvrez tous nos conseils pour
 					prendre soin de vos plantes 🌱✨
@@ -33,6 +34,7 @@ function Footer() {
 				<input
 					type="email"
 					name="email"
+					placeholder="Saisissez_votre_adresse@mail.fr"
 					onChange={(e) => setInputValue(e.target.value)}
 				/>
 				<button
@@ -41,7 +43,7 @@ function Footer() {
 							`Votre adresse : ${inputValue} a bien été ajouté à notre carnet de plantofiles !`
 						)
 					}>
-					Ajoutez-moi
+					Ajoutez-moi !
 				</button>
 			</form>
 		</footer>

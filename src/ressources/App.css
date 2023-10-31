@@ -32,9 +32,18 @@ form {
 	width: 40%;
 }
 
+label {
+	display: none;
+}
+
+input::placeholder {
+	font-style: italic;
+}
+
 input {
-	padding: 5px;
-	border-radius: 5px;
+	padding: 8px;
+	width: 40%;
+	margin-right: 8px;
 }
 
 button {
@@ -42,7 +51,7 @@ button {
 	border-radius: 5px;
 	background-color: #d3e3df;
 	border: none;
-	padding: 5px;
+	padding: 8px;
 	cursor: pointer;
 }
 
@@ -173,5 +182,10 @@ ul {
 
 .nl {
 	font-family: 'Times New Roman', Times, serif;
-	font-size: 18px;
+	font-size: 16px;
+}
+
+form h3 {
+	padding-left: 0px;
+	letter-spacing: 2px;
 }
