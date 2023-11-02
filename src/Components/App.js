@@ -1,6 +1,6 @@
 import '../ressources/App.css'
 import Banner from './Banner'
-import Cart from './Card'
+import Card from './Card'
 import Footer from './Footer'
 import ShoppingList from './ShoppingList'
 
@@ -9,7 +9,7 @@ function App() {
 		<div className="App">
 			<Banner />
 			<div className="main">
-				<Cart />
+				<Card />
 				<ShoppingList />
 			</div>
 			<Footer />

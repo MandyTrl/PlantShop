@@ -1,5 +1,6 @@
 import CareScale from './CareScale'
 import plantList from './../datas/plantList'
+import panier from '../ressources/assets/panier.png'
 
 function ShoppingList() {
 	const categories = plantList.reduce(
@@ -26,8 +27,15 @@ function ShoppingList() {
 							<img src={plant.cover} alt={plant.cover} className="plant-img" />
 							<p className="plant-name">{plant.name}</p>
 							{plant.isSpecialOffer && <div className="sales">Soldes</div>}
-							<CareScale careType="water" scaleValue={plant.light} />
-							<CareScale careType="light" scaleValue={plant.light} />
+							<div className="plant-container">
+								<div className="btn-panier">
+									<img src={panier} alt="panier" className="img-panier" />
+								</div>
+								<div>
+									<CareScale careType="water" scaleValue={plant.light} />
+									<CareScale careType="light" scaleValue={plant.light} />
+								</div>
+							</div>
 						</li>
 					</>
 				))}

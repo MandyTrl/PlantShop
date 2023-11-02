@@ -13,14 +13,14 @@ h1 {
 h3 {
 	font-weight: normal;
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 13px;
 	letter-spacing: 1px;
-	padding-left: 35px;
+	padding-left: 8px;
 }
 
 footer {
 	display: flex;
-	align-items: start;
+	align-items: flex-start;
 	justify-content: space-around;
 	border-top: #084035 1px solid;
 	padding: 20px;
@@ -220,6 +220,73 @@ form h3 {
 
 .form-container {
 	display: flex;
-	justify-content: start;
-	align-items: start;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.img-panier {
+	width: 30px;
+}
+
+.btn-panier {
+	width: 35px;
+	border: 1px rgb(0, 136, 255) solid;
+	padding: 9px;
+	border-radius: 50%;
+	margin-right: 8px;
+	cursor: pointer;
+}
+
+.plant-container {
+	display: flex;
+	align-items: center;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgb(0, 136, 255);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 2px rgb(0, 136, 255);
+	}
+}
+
+.btn-panier:hover {
+	animation: pulse 1s;
+}
+
+.btn-panier:active {
+	transform: scale(0.9);
+	box-shadow: 0 0 0 2px rgb(0, 136, 255);
+}
+
+.card-header {
+	display: flex;
+	align-items: flex-start;
+	padding-left: 35px;
+	padding-top: 15px;
+}
+
+.delete-card {
+	font-size: 11px;
+	cursor: pointer;
+	text-transform: none;
+}
+
+.delete-card:hover,
+.delete-card:active {
+	color: rgb(0, 136, 255);
+}
+
+.delete-card:active {
+	font-weight: 600;
+}
+
+.empty-card {
+	font-style: italic;
+	font-size: 11px;
+	padding: 40px;
 }
