@@ -24,6 +24,7 @@ function ShoppingList({ shoppingCart, updateCart }) {
 				{plantList.map((plant) => (
 					<li key={plant.id} className="plant-item">
 						<img src={plant.cover} alt={plant.cover} className="plant-img" />
+						<p className="price">{plant.price}€</p>
 						<p className="plant-name">{plant.name}</p>
 						{plant.isSpecialOffer && <div className="sales">Soldes</div>}
 						<div className="plant-container">

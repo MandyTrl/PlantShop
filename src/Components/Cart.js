@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import panier from '../ressources/assets/panier.png'
 
-function Cart({ shoppingCart }) {
+function Cart({ shoppingCart, updateCart }) {
 	const [total, setTotal] = useState(0)
 
 	useEffect(() => {
@@ -37,7 +37,7 @@ function Cart({ shoppingCart }) {
 			<div className="total">
 				<p>Total {total}€</p>
 				{total !== 0 && (
-					<p className="delete-cart" onClick={() => setTotal(0)}>
+					<p className="delete-cart" onClick={() => updateCart([])}>
 						Vider le panier
 					</p>
 				)}
