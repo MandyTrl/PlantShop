@@ -22,9 +22,9 @@ footer {
 	display: flex;
 	align-items: start;
 	justify-content: space-around;
-	background-color: #084035;
-	color: white;
+	border-top: #084035 1px solid;
 	padding: 20px;
+	margin-top: 25px;
 	font-size: 13px;
 }
 
@@ -41,18 +41,39 @@ input::placeholder {
 }
 
 input {
-	padding: 8px;
-	width: 40%;
-	margin-right: 8px;
+	padding: 9px;
+	width: 220px;
+	border-radius: 25px;
+	border: #084035 1px solid;
+	outline: none;
+}
+
+input:focus {
+	outline: 2px solid #d3e3df;
+	outline-offset: 1px;
 }
 
 button {
-	width: fit-content;
-	border-radius: 5px;
-	background-color: #d3e3df;
-	border: none;
-	padding: 8px;
+	border: 0;
+	outline: 0;
 	cursor: pointer;
+	color: rgb(60, 66, 87);
+	background-color: rgb(255, 255, 255);
+	margin-left: 20px;
+	box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+		rgba(0, 0, 0, 0.288) 0px 1px 1px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px,
+		rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+		rgb(60 66 87 / 8%) 0px 2px 5px 0px;
+	border-radius: 25px;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 8px 15px;
+	min-height: 28px;
+	transition: background-color 0.24s, box-shadow 0.24s;
+}
+
+button:hover {
+	background-color: #d3e3df;
 }
 
 .main {
@@ -172,7 +193,7 @@ ul {
 }
 
 .container-mention {
-	width: 40%;
+	width: 35%;
 }
 
 .mentions-legales {
@@ -188,4 +209,17 @@ ul {
 form h3 {
 	padding-left: 0px;
 	letter-spacing: 2px;
+}
+
+.error-message {
+	color: rgb(220, 7, 7);
+	font-weight: 600;
+	font-size: 10px;
+	padding-left: 5px;
+}
+
+.form-container {
+	display: flex;
+	justify-content: start;
+	align-items: start;
 }

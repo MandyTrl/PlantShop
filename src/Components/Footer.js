@@ -2,9 +2,48 @@ import { useState } from 'react'
 
 function Footer() {
 	const [inputValue, setInputValue] = useState('')
+	const [error, setError] = useState('')
+
+	const handleMailError = (e) => {
+		if (!e.includes('@')) {
+			setError('L\'adresse e-mail doit contenir "@"')
+		} else {
+			setError('')
+		}
+	}
+
+	const add2Newsletter = () => {
+		if (!error)
+			alert(
+				`Votre adresse : ${inputValue} a bien été ajouté à notre carnet de plantofiles !`
+			)
+	}
 
 	return (
 		<footer>
+			<form>
+				<h3>📬 Newsletter</h3>
+				<p className="nl">
+					Abonnez-vous à la newsletter et découvrez tous nos conseils pour
+					prendre soin de vos plantes 🌱✨
+				</p>
+				<div className="form-container">
+					<label for="email"> Email </label>
+					<div className="mail">
+						<input
+							type="email"
+							name="email"
+							placeholder="Saisissez_votre_adresse@mail.fr"
+							onChange={(e) => setInputValue(e.target.value)}
+							onBlur={(e) => handleMailError(e.target.value)}
+						/>
+						{error && <p className="error-message">{error}</p>}
+					</div>
+
+					<button onClick={() => add2Newsletter()}>Ajoutez-moi !</button>
+				</div>
+			</form>
+
 			<div className="container-mention">
 				<p>Mentions légales</p>
 				<p className="mentions-legales">
@@ -24,28 +63,6 @@ function Footer() {
 					mollis eros eros, quis posuere arcu commodo sit amet.
 				</p>
 			</div>
-			<form>
-				<h3>Newsletter</h3>
-				<p className="nl">
-					Abonnez-vous à la newsletter et découvrez tous nos conseils pour
-					prendre soin de vos plantes 🌱✨
-				</p>
-				<label for="email"> Email </label>
-				<input
-					type="email"
-					name="email"
-					placeholder="Saisissez_votre_adresse@mail.fr"
-					onChange={(e) => setInputValue(e.target.value)}
-				/>
-				<button
-					onClick={() =>
-						alert(
-							`Votre adresse : ${inputValue} a bien été ajouté à notre carnet de plantofiles !`
-						)
-					}>
-					Ajoutez-moi !
-				</button>
-			</form>
 		</footer>
 	)
 }
