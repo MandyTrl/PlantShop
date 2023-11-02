@@ -122,7 +122,7 @@ ul {
 	object-fit: cover;
 }
 
-.card {
+.cart {
 	width: 30%;
 	height: fit-content;
 	margin: 30px 0px;
@@ -134,11 +134,11 @@ ul {
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 1px 0px;
 }
 
-.list-card {
+.list-cart {
 	display: flex;
 }
 
-.list-card li {
+.list-cart li {
 	padding: 10px 0 0 0;
 	border-bottom: #31b572 1px solid;
 }
@@ -263,29 +263,29 @@ form h3 {
 	box-shadow: 0 0 0 2px rgb(0, 136, 255);
 }
 
-.card-header {
+.cart-header {
 	display: flex;
 	align-items: flex-start;
 	padding-left: 35px;
 	padding-top: 15px;
 }
 
-.delete-card {
+.delete-cart {
 	font-size: 11px;
 	cursor: pointer;
 	text-transform: none;
 }
 
-.delete-card:hover,
-.delete-card:active {
+.delete-cart:hover,
+.delete-cart:active {
 	color: rgb(0, 136, 255);
 }
 
-.delete-card:active {
+.delete-cart:active {
 	font-weight: 600;
 }
 
-.empty-card {
+.empty-cart {
 	font-style: italic;
 	font-size: 11px;
 	padding: 40px;

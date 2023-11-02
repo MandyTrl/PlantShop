@@ -2,7 +2,7 @@ import CareScale from './CareScale'
 import plantList from './../datas/plantList'
 import panier from '../ressources/assets/panier.png'
 
-function ShoppingList() {
+function ShoppingList({ shoppingCart, updateCart }) {
 	const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category), //est-ce que la catégorie de la
@@ -22,22 +22,22 @@ function ShoppingList() {
 			</ul>
 			<ul className="lmj-plant-list">
 				{plantList.map((plant) => (
-					<>
-						<li key={plant.id} className="plant-item">
-							<img src={plant.cover} alt={plant.cover} className="plant-img" />
-							<p className="plant-name">{plant.name}</p>
-							{plant.isSpecialOffer && <div className="sales">Soldes</div>}
-							<div className="plant-container">
-								<div className="btn-panier">
-									<img src={panier} alt="panier" className="img-panier" />
-								</div>
-								<div>
-									<CareScale careType="water" scaleValue={plant.light} />
-									<CareScale careType="light" scaleValue={plant.light} />
-								</div>
+					<li key={plant.id} className="plant-item">
+						<img src={plant.cover} alt={plant.cover} className="plant-img" />
+						<p className="plant-name">{plant.name}</p>
+						{plant.isSpecialOffer && <div className="sales">Soldes</div>}
+						<div className="plant-container">
+							<div
+								className="btn-panier"
+								onClick={() => updateCart([...shoppingCart, plant])}>
+								<img src={panier} alt="panier" className="img-panier" />
 							</div>
-						</li>
-					</>
+							<div>
+								<CareScale careType="water" scaleValue={plant.light} />
+								<CareScale careType="light" scaleValue={plant.light} />
+							</div>
+						</div>
+					</li>
 				))}
 			</ul>
 		</div>

@@ -1,16 +1,21 @@
+import { useState } from 'react'
 import '../ressources/App.css'
 import Banner from './Banner'
-import Card from './Card'
+import Cart from './Cart'
 import Footer from './Footer'
 import ShoppingList from './ShoppingList'
 
 function App() {
+	const [shoppingCart, setShoppingCart] = useState([])
 	return (
 		<div className="App">
 			<Banner />
 			<div className="main">
-				<Card />
-				<ShoppingList />
+				<Cart shoppingCart={shoppingCart} />
+				<ShoppingList
+					shoppingCart={shoppingCart}
+					updateCart={setShoppingCart}
+				/>
 			</div>
 			<Footer />
 		</div>
